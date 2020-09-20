@@ -61,7 +61,7 @@ const Menu = ({ history }) => (
                  
        <div>
        <li className="nav-item">
-       <a href="/"
+       <span
            className="nav-link"
            style={
                (isActive(history, "/signup"),
@@ -71,7 +71,7 @@ const Menu = ({ history }) => (
 
        >
            Sign Out
-</a>
+</span>
    </li>
 
    <li className="nav-item">

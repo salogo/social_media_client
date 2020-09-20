@@ -40,17 +40,17 @@ export const   authenticate =(jwt, next)=> {
 }
 
  
-export const signout = (next) => {
-    if (typeof window !== "undefined") localStorage.removeItem("jwt")
-    next()
+export const signout = next => {
+    if (typeof window !== "undefined") localStorage.removeItem("jwt");
+    next();
     return fetch("http:localhost:8080/api/signout", {
         methode: "GET"
     })
         .then(response => {
             console.log("signout", response)
-            return response.jeson()
+            return response.json()
         })
-        .catch(err => console.log(err))
+        .catch(err => console.log("signout error",err))
 }
 
 export const isAuthenticated = () => {
