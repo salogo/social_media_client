@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { Redirect, Link } from 'react-router-dom';
+import { Redirect,  Link  } from 'react-router-dom';
 import { isAuthenticated } from "../auth";
 import { read } from "./apiUser";
 import DefaultProfile from "../images/avatar.png";
 import DeleteUser from './DeleteUser';
+
 
 
 class Profile extends Component {
@@ -79,9 +80,10 @@ componentWillReceiveProps(props){
              { isAuthenticated().user &&
                isAuthenticated().user._id === user._id && (
                <div className="d-inline-block">
+                
                    <Link 
                    className="btn btn-raised btn-success mr-5"
-                   to={`/user/edit/${user._id}`}
+                   to={`/api/user/edit/${user._id}`}
                    >
                      Edit Profile
                    </Link>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-//import {signup} from "../auth"
+import {signup} from "../auth"
 import {Link} from "react-router-dom";
 
 class Signup extends Component {
@@ -28,7 +28,7 @@ class Signup extends Component {
         };
 
         //console.log(user)
-        this.signup(user).then(data => {
+        signup(user).then(data => {
             if (data.error) this.setState({ error: data.error });
             else
                 this.setState({

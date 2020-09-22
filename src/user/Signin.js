@@ -43,10 +43,7 @@ class Signin extends Component {
                 this.authenticate(data, ()=> {
                     this.setState({redirectToReferer: true})
                 })
-                //redirect
-
             }
-
         });
     };
 

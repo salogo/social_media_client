@@ -3,7 +3,7 @@
 export const  signup = (user) => {
   
 
-    return fetch("http:localhost:8080/api/signup", {
+    return fetch("http://localhost:8080/api/signup", {
         method: "POST",
         headers: {
             Accept: "application/json",
@@ -16,9 +16,10 @@ export const  signup = (user) => {
         })
         .catch(err => console.log(err));
 };
+/*
 export const  signin = (user) => {
 
-    return fetch("http:localhost:8080/api/signin", {
+    return fetch("http://localhost:8080/api/signin", {
         method: "POST",
         headers: {
             Accept: "application/json",
@@ -31,7 +32,7 @@ export const  signin = (user) => {
         })
         .catch(err => console.log(err));
 };
-
+*/
 export const   authenticate =(jwt, next)=> {
     if (typeof windown !== undefined) {
         localStorage.setItem("jwt" , JSON.stringify(jwt))
@@ -43,7 +44,7 @@ export const   authenticate =(jwt, next)=> {
 export const signout = next => {
     if (typeof window !== "undefined") localStorage.removeItem("jwt");
     next();
-    return fetch("http:localhost:8080/api/signout", {
+    return fetch("http://localhost:8080/api/signout", {
         methode: "GET"
     })
         .then(response => {
