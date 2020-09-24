@@ -13,15 +13,16 @@ export const read = (userId, token) => {
       .catch(err => console.log(err))
   };
 
+//user = userData
   export const update = (userId, token, user) => {
+    console.log("USER DATA UPDATE:", user);
     return fetch(`http://localhost:8080/api/user/${userId}`, {
       method:"put",
       headers: {
         Accept: "application/json",
-        "Content-Type": "application/json",
         Authorization: `Bearer ${token}`
       },
-      body:  JSON.stringify(user)
+      body: user
     }) 
       .then(response => {
         return response.json();       
