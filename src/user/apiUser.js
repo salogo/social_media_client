@@ -65,3 +65,36 @@ export const read = (userId, token) => {
       }
     }
   }
+
+  export const follow = (userId, token, followId) => {
+    return fetch("http://localhost:8080/api/user/follow", {
+      method:"put",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`
+      },
+      body: JSON.stringify({userId, followId})
+    }) 
+      .then(response => {
+        return response.json();       
+      }) 
+      .catch(err => console.log("update error!",err));  
+  };
+
+
+  export const unfollow = (userId, token, unfollowId) => {
+    return fetch("http://localhost:8080/api/user/unfollow", {
+      method:"put",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`
+      },
+      body: JSON.stringify({userId, unfollowId})
+    }) 
+      .then(response => {
+        return response.json();       
+      }) 
+      .catch(err => console.log("update error!",err));  
+  };
