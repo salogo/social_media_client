@@ -6,7 +6,6 @@ import DefaultProfile from "../images/avatar.png";
 import DeleteUser from './DeleteUser';
 
 
-
 class Profile extends Component {
   constructor() {
     super()
@@ -45,24 +44,23 @@ componentWillReceiveProps(props){
 
     if (redirectToSignin) return <Redirect to="/signin" />
 
+    const photoUrl = user._id
+     ? `http://localhost:8080/api/user/photo/${user._id}?${new Date().getTime()}`
+     : DefaultProfile;
 
     return (
       <div className="container">
       <h2 className="mt-5 mb-5">Profile</h2>
         <div className="row">
-          <div className="col-md-6">             
-            <img
-            className="card-img-top"
-            src={DefaultProfile}
-            alt={user.name}
-            style={{
-              width:"100%",
-               height:"15vw" ,
-               objectFit : "cover"
-              }}
-             />
+          <div className="col-md-6">  
 
-
+          <img 
+          style={{height: "200px", width: "auto"}}
+           src={photoUrl}
+           onError={ i => (i.target.src = `${DefaultProfile}`)}
+           className="img-thumbnail"
+           alt={user.name}
+            />
 
           </div>
 
@@ -91,6 +89,14 @@ componentWillReceiveProps(props){
                </div>
              )}
           </div>
+        </div>
+       
+        <div className="row">
+            <div className="col md-12 mt-5 mb-5">
+              <hr />
+              <p className="lead">{user.about}</p>
+              <hr />
+            </div>
         </div>
 
       </div>

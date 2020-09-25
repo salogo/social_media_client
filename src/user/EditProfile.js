@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { isAuthenticated } from "../auth";
-import { read, update } from "./apiUser";
+import { read, update ,updatedUser} from "./apiUser";
+import DefaultProfile from "../images/avatar.png";
 
 
 class EditProfile extends Component {
@@ -14,8 +15,10 @@ class EditProfile extends Component {
             password: "",
             redirectToProfile: false,
             error: "",
-            loading: false
-        }
+            loading: false,
+            fileSize: 0,
+            about: ""
+        };
     }
 
     init = userId => {
@@ -28,7 +31,8 @@ class EditProfile extends Component {
                     id: data._id,
                     name: data.name,
                     email: data.email,
-                    error: data.error
+                    error: data.error,
+                    about: data.about
                 });
             }
         });
@@ -41,26 +45,32 @@ class EditProfile extends Component {
     }
 
     isValid = () => {
-        const {name, email, password }= this.state
+        const {name, email, password , fileSize}= this.state
         if (name.length === 0){
-            this.setState({error: "Name cannot be empty!"})
+            this.setState({error: "Name cannot be empty!", loading: false});
+            return false
+        }
+        if (fileSize > 100000){
+            this.setState({error: "File size should be less than 100kb!"})
             return false
         }
         if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)){
-            this.setState({error: "write a valid email !"})
+            this.setState({error: "write a valid email !", loading: false});
             return false
         }
         if (password.length >= 1 && password.length <= 5){
-            this.setState({error: "Password at least 6 characters is required!"})
+            this.setState({error: "Password at least 6 characters is required!", loading: false})
             return false
         }
         return true;
     }
 
     handleChange = name => event => {
-        const value = name === "photo" ? event.target.files[0] : event.target.value
+        this.setState({error: ""});
+        const value = name === "photo" ? event.target.files[0] : event.target.value;
+        const fileSize = name === "photo" ? event.target.files[0].size : 0 ;
         this.userData.set(name, value)
-        this.setState({ [name]: value });
+        this.setState({ [name]: value ,fileSize});
     }
     clickSubmit = event => {
         event.preventDefault();
@@ -72,14 +82,16 @@ class EditProfile extends Component {
     update(userId, token, this.userData).then(data => {
         if (data.error) this.setState({error:data.error});               
          else 
+         updatedUser(data, () => {
             this.setState({
-                 redirectToProfile: true 
-                });            
+                redirectToProfile: true 
+               });  
+         });          
         });
       }
     };
 
-    signupForm = (name, email, password) => (
+    signupForm = (name, email, password, about) => (
         <form>
 
         <div className="form-groupe">
@@ -112,6 +124,15 @@ class EditProfile extends Component {
             </div>
 
             <div className="form-groupe">
+            <label className="text-muted">About</label>
+            <textarea
+                onChange={this.handleChange("about")}
+                type="text" className="form-control"
+                value={about}
+            />
+        </div>
+
+            <div className="form-groupe">
                 <label className="text-muted">Password</label>
                 <input onChange={this.handleChange("password")}
                     type="password"
@@ -129,10 +150,12 @@ class EditProfile extends Component {
     );
 
     render() {
-        const { id, name, email, password, redirectToProfile, error, loading } = this.state;
+        const { id, name, email, password, redirectToProfile, error, loading, about } = this.state;
         if (redirectToProfile) {
             return <Redirect to={`/api/user/${id}`} />
         }
+
+        const photoUrl = id ? `http://localhost:8080/api/user/photo/${id}?${new Date().getTime()}` : DefaultProfile;
 
         return (
             <div className="container">
@@ -153,7 +176,15 @@ class EditProfile extends Component {
                          ""
                      )}
 
-                {this.signupForm(name, email, password)}
+                <img 
+                style={{height: "200px", width: "auto"}}
+                 src={photoUrl}
+                 onError={ i => (i.target.src = `${DefaultProfile}`)}
+                 className="img-thumbnail"
+                 alt={name}
+                  />
+
+                {this.signupForm(name, email, password, about)}
 
             </div>
         );

@@ -54,3 +54,14 @@ export const read = (userId, token) => {
       })
       .catch(err => console.log(err))
   }
+//update user in localStorage , so the name on user'profile on the top get changed
+  export const updatedUser = (user, next) => {
+    if(typeof window !== "undefined") {
+      if(localStorage.getItem("jwt")) {
+        let auth = JSON.parse(localStorage.getItem("jwt"))
+        auth.user = user
+        localStorage.setItem("jwt", JSON.stringify(auth));
+        next();
+      }
+    }
+  }
