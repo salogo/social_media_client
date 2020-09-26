@@ -7,7 +7,8 @@ import Menu from "./core/Menu";
 import Profile from "./user/Profile";
 import Users from "./user/Users";
 import EditProfile from "./user/EditProfile";
-import PrivateRoute from "./auth/PrivateRoute"
+import PrivateRoute from "./auth/PrivateRoute";
+import FindPeople from "./user/FindPeople";
 
 const MainRouter = () => (
     <div>
@@ -21,6 +22,11 @@ const MainRouter = () => (
             exact
              path="/api/user/edit/:userId"
               component={EditProfile} 
+              />
+              <PrivateRoute 
+            exact
+             path="/FindPeople"
+              component={FindPeople} 
               />
             <PrivateRoute exact path="/api/user/:userId" component={Profile} />            
         </Switch>

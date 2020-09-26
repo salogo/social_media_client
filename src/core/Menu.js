@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
-import { signout,isAuthenticated} from "../auth"
+import { signout, isAuthenticated } from "../auth"
 
 const isActive = (history, path) => {
     if (history.location.pathname === path) return { color: "#ADFF2F" }
@@ -21,16 +21,16 @@ const Menu = ({ history }) => (
                     Home
                  </Link>
             </li>
-           
+
             <li className="nav-item">
-            <Link
-                className="nav-link"
-                style={isActive(history, "/users")}
-                to="/api/users"
-            >
-                Users
+                <Link
+                    className="nav-link"
+                    style={isActive(history, "/users")}
+                    to="/api/users"
+                >
+                    Users
              </Link>
-        </li>
+            </li>
 
 
             {!isAuthenticated() && (
@@ -56,37 +56,46 @@ const Menu = ({ history }) => (
                 </div>
             )}
 
-            
+
             {isAuthenticated() && (
-                 
-       <div>
-       <li className="nav-item">
-       <span
-           className="nav-link"
-           style={
-               (isActive(history, "/signup"),
-                   { cursor: "pointer", color: "#fff" })
-           }
-           onClick={() => signout(() => history.push("/"))}
 
-       >
-           Sign Out
+                <>
+
+                    <li className="nav-item">
+
+                        <Link
+                            to={"/findpeople"}
+                            className="nav-link">
+                            Find People
+  </Link>
+
+                    </li>
+
+                    <li className="nav-item">
+
+                        <Link
+                            to={`/api/user/${isAuthenticated().user._id}`}
+                            className="nav-link">
+                            {`${isAuthenticated().user.name}' profile`}
+                        </Link>
+                    </li>
+                    <li className="nav-item">
+                        <span
+                            className="nav-link"
+                            style={
+                                (isActive(history, "/signup"),
+                                    { cursor: "pointer", color: "#fff" })
+                            }
+                            onClick={() => signout(() => history.push("/"))}
+
+                        >
+                            Sign Out
 </span>
-   </li>
+                    </li>
 
-   <li className="nav-item">
-     
-       <Link 
-       to={`/api/user/${isAuthenticated().user._id}`} 
-       className="nav-link"> 
-           {`${isAuthenticated().user.name}' profile`}
-      </Link>
-
-   </li>
-       </div>
-
+                </>
             )}
-        </ul>       
+        </ul>
     </div>
 );
 export default withRouter(Menu);

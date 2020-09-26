@@ -98,3 +98,18 @@ export const read = (userId, token) => {
       }) 
       .catch(err => console.log("update error!",err));  
   };
+
+  export const findPeople = (userId, token) => {
+    return fetch(`http://localhost:8080/api/user/findpeople/${userId}`, {
+      method:"GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`
+      }
+    }) 
+      .then(response => {
+        return response.json();       
+      }) 
+      .catch(err => console.log("update error!",err));  
+  };
