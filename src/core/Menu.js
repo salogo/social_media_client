@@ -58,18 +58,26 @@ const Menu = ({ history }) => (
 
 
             {isAuthenticated() && (
-
                 <>
-
                     <li className="nav-item">
 
                         <Link
-                            to={"/findpeople"}
+                            to={"/post/create"}
                             className="nav-link">
-                            Find People
-  </Link>
+                            Create Post
+                       </Link>
 
                     </li>
+
+                    <li className="nav-item">
+
+                    <Link
+                        to={"/findpeople"}
+                        className="nav-link">
+                        Find People
+                   </Link>
+
+                </li>
 
                     <li className="nav-item">
 
