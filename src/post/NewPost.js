@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { isAuthenticated } from "../auth";
 import { create} from "./apiPost";
-import DefaultProfile from "../images/avatar.png";
+//import DefaultProfile from "../images/avatar.png";
 
 
 class NewPost extends Component {
@@ -118,7 +118,7 @@ class NewPost extends Component {
     );
 
     render() {
-        const { title, body, photo, user, error, loading, redirectToProfile} = this.state;
+        const { title, body, /* photo, */ user, error, loading, redirectToProfile} = this.state;
          
         if (redirectToProfile) {
             return <Redirect to={`/api/user/${user._id}`} />

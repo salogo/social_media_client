@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { list } from "./apiPost";
-//import DefaultProfile from "../images/avatar.png";
+import DefaultPost from "../images/clouds.jpeg";
 import { Link } from "react-router-dom";
 
 class Posts extends Component {
@@ -25,29 +25,36 @@ class Posts extends Component {
         return (
             <div className="row">
                 {posts.map((post, i) => {
-                    const posterId = post.postedBy 
-                    ? `/api/user/${post.postedBy._id}`
-                     : "";
-                    const posterName = post.postedBy 
-                    ? post.postedBy.name
-                     : " Unknown";
+                    const posterId = post.postedBy
+                        ? `/api/user/${post.postedBy._id}`
+                        : "";
+                    const posterName = post.postedBy
+                        ? post.postedBy.name
+                        : " Unknown";
 
                     return (
                         <div className="card col-md-4" key={i}>
                             <div className="card-body">
+                                <img
+                                    src={`http://localhost:8080/api/post/photo/${post._id}`}
+                                    alt={post.title}
+                                    onError={i => i.target.src = `${DefaultPost}`}
+                                    className="img-thunbail mb-3"
+                                    style={{ height: "200px", width: "auto" }}
+                                />
                                 <h5 className="card-title">{post.title}</h5>
                                 {/*substring(0, 10) its to just show few letters before click more */}
                                 <p className="card-text">{post.body.substring(0, 100)} </p>
                                 <br />
                                 <p className="font-italic mark">
-                                    Posted by{" "} 
-                                     <Link to={`${posterId}`}>
-                                     {posterName} {" "}
-                                     </Link>
+                                    Posted by{" "}
+                                    <Link to={`${posterId}`}>
+                                        {posterName} {" "}
+                                    </Link>
                                     on {new Date(post.created).toDateString()}
                                 </p>
                                 <Link
-                                    to={`/api/posts/${post._id}`}
+                                    to={`/api/post/${post._id}`}
                                     className="btn btn-raised btn-primary btn-sm">
                                     Read more
 </Link>
@@ -64,7 +71,10 @@ class Posts extends Component {
         const { posts } = this.state;
         return (
             <div className="container">
-                <h2 className="mt-5 mb-5"> Recent Posts</h2>
+                <h2 className="mt-5 mb-5">
+                {/*  posts.length because its in array */}
+                    {!posts.length ? "Loading..." : "Recent Posts"}
+                </h2>
                 {this.renderPosts(posts)}
             </div>
         );
