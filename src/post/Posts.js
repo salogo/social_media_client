@@ -40,7 +40,7 @@ class Posts extends Component {
                                     alt={post.title}
                                     onError={i => i.target.src = `${DefaultPost}`}
                                     className="img-thunbail mb-3"
-                                    style={{ height: "200px", width: "auto" }}
+                                    style={{ height: "200px", width: "100%" }}
                                 />
                                 <h5 className="card-title">{post.title}</h5>
                                 {/*substring(0, 10) its to just show few letters before click more */}

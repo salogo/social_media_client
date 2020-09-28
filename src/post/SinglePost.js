@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import { singlePost } from "./apiPost";
+import { singlePost, remove } from "./apiPost";
 import DefaultPost from "../images/clouds.jpeg";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { isAuthenticated } from "../auth";
 
  class SinglePost extends Component {
      state = {
-         post: ""
+         post: "",
+         redirectToHome: false
      }
      componentDidMount = () => {
          const postId = this.props.match.params.postId
@@ -18,6 +19,25 @@ import { isAuthenticated } from "../auth";
              }
          })
      }
+
+     deletePost = post => {
+         const postId = this.props.match.params.postId;
+         const token = isAuthenticated().token;
+         remove(postId, token).then(data => {
+             if(data.error) {
+                 console.log(data.error)
+             } else {
+                 this.setState({redirectToHome: true})
+             }
+         })
+     }
+
+     deleteConfirmed = () => {
+        let answer = window.confirm("Confirm your Prost Dalete!")
+        if (answer) {
+            this.deletePost()
+        }
+    }
 
    renderPost = (post) => {
     const posterId = post.postedBy 
@@ -56,11 +76,13 @@ import { isAuthenticated } from "../auth";
                 {isAuthenticated().user &&
                     isAuthenticated().user._id === post.postedBy._id && 
                     <>
-                    <button className="btn btn-raised btn-warning mr-5">
-                    Update Post
-                   </button>
+                    <Link
+                    to={`/api/post/edit/${post._id}`}
+                    className="btn btn-raised btn-warning btn-sm mr-5">
+                    Update post
+                    </Link>
                     
-                   <button className="btn btn-raised btn-danger">
+                   <button onClick={this.deleteConfirmed} className="btn btn-raised btn-danger">
                    Delete Post
                   </button> 
                   </>
@@ -74,6 +96,11 @@ import { isAuthenticated } from "../auth";
    }     
 
   render() {
+
+    if (this.state.redirectToHome) {
+        return <Redirect to={`/`} />
+    }
+
       const {post} = this.state
     return (
       <div className="container">
