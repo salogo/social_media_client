@@ -109,3 +109,35 @@ export const create = (userId, token, post) => {
       }) 
       .catch(err => console.log("update error!",err));  
   };
+
+  export const comment = (userId, token, postId, comment) => {
+    return fetch(`http://localhost:8080/api/post/comment`, {
+      method:"put",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`
+      },
+      body: JSON.stringify({userId, postId, comment})
+    }) 
+      .then(response => {
+        return response.json();       
+      }) 
+      .catch(err => console.log("comment error!",err));  
+  };
+
+  export const uncomment = (userId, token, postId, comment) => {
+    return fetch(`http://localhost:8080/api/post/uncomment`, {
+      method:"put",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`
+      },
+      body: JSON.stringify({userId, postId, comment})
+    }) 
+      .then(response => {
+        return response.json();       
+      }) 
+      .catch(err => console.log("uncomment error!",err));  
+  };
