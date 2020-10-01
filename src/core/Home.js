@@ -1,12 +1,16 @@
 import React from "react";
 import Posts from "../post/Posts";
+import connect from "../images/connect.jpg";
 
 const Home = () => (
     <div>
-        <div className="jumbotron">
+        <div className="jumbotron bg-secondary" >
 
-            <h2> Home</h2>
-            <p>Welcome to Social Media Client!</p>
+            <img 
+            src={connect} 
+            alt="people" 
+            style={{ height: "100%", width: "100%", }}
+            />        
 
         </div>
         <div className="container">
