@@ -19,24 +19,7 @@ class NewPost extends Component {
              edirectToProfile: false
         };
     }
-/*
-    init = userId => {
-        const token = isAuthenticated().token;
-        read(userId, token).then(data => {
-            if (data.error) {
-                this.setState({ redirectToProfile: true });
-            } else {
-                this.setState({
-                    id: data._id,
-                    name: data.name,
-                    email: data.email,
-                    error: data.error,
-                    about: data.about
-                });
-            }
-        });
-    };
-*/
+      
     componentDidMount() {
         this.postData = new FormData();
         this.setState({user: isAuthenticated().user})
@@ -101,7 +84,7 @@ class NewPost extends Component {
             </div>
 
             <div className="form-groupe">
-            <label className="text-muted">Body</label>
+            <label className="text-muted">Description....</label>
             <textarea
                 onChange={this.handleChange("body")}
                 type="text" className="form-control"

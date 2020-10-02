@@ -138,13 +138,13 @@ class Comment extends Component {
                                                     isAuthenticated().user._id ===
                                                     comment.postedBy._id &&
                                                     <>
-                                                        <span
+                                                        <button
                                                             onClick={() => this.deleteConfirmed(comment)
                                                             }
-                                                            className="text-danger float-right mr-1"
+                                                            className="text-danger float-right btn btn-danger"
                                                         >
                                                             Remove Post
-                                              </span>
+                                              </button>
                                                     </>
                                                 }
                                             </span>

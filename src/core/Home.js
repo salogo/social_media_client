@@ -2,9 +2,11 @@ import React from "react";
 import Posts from "../post/Posts";
 import connect from "../images/connect.jpg";
 
+
+
 const Home = () => (
     <div>
-        <div className="jumbotron bg-secondary" >
+        <div className="jumbotron bg-secondary sega" >
 
             <img 
             src={connect} 

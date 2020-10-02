@@ -73,7 +73,7 @@ class Posts extends Component {
             <div className="container">
                 <h2 className="mt-5 mb-5">
                 {/*  posts.length because its in array */}
-                    {!posts.length ? "Loading..." : "Recent Posts"}
+                    {!posts.length ? "Loading..." : "STAY CONNECTED TO OUR ACTIVE USERS"}
                 </h2>
                 {this.renderPosts(posts)}
             </div>

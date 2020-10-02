@@ -28,7 +28,7 @@ const Menu = ({ history }) => (
                     style={isActive(history, "/users")}
                     to="/api/users"
                 >
-                    Users
+                    ALL Users
              </Link>
             </li>
             
@@ -75,7 +75,7 @@ const Menu = ({ history }) => (
                     <Link
                         to={"/findpeople"}
                         className="nav-link">
-                        Find People
+                        Follow People!
                    </Link>
 
                 </li>
