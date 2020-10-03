@@ -43,7 +43,7 @@ class Signup extends Component {
 
     signup = (user) => {
 
-        return fetch("http://localhost:8080/api/signup", {
+        return fetch("http://64.225.118.247/api/signup", {
             method: "POST",
             headers: {
                 Accept: "application/json",

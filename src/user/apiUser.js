@@ -1,5 +1,5 @@
 export const read = (userId, token) => {
-    return fetch(`http://localhost:8080/api/user/${userId}`, {
+    return fetch(`http://64.225.118.247/api/user/${userId}`, {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -16,7 +16,7 @@ export const read = (userId, token) => {
 //user = userData
   export const update = (userId, token, user) => {
     console.log("USER DATA UPDATE:", user);
-    return fetch(`http://localhost:8080/api/user/${userId}`, {
+    return fetch(`http://64.225.118.247/api/user/${userId}`, {
       method:"put",
       headers: {
         Accept: "application/json",
@@ -31,7 +31,7 @@ export const read = (userId, token) => {
   };
   //
   export const remove = (userId, token) => {
-    return fetch(`http://localhost:8080/api/user/${userId}`, {
+    return fetch(`http://64.225.118.247/api/user/${userId}`, {
       method: "DELETE",
       headers: {
         Accept: "application/json",
@@ -46,7 +46,7 @@ export const read = (userId, token) => {
   };
 
   export const list = ()=> {
-    return fetch("http://localhost:8080/api/users", {
+    return fetch("http://64.225.118.247/api/users", {
       method: "GET",
     })
       .then(response => {
@@ -67,7 +67,7 @@ export const read = (userId, token) => {
   }
 
   export const follow = (userId, token, followId) => {
-    return fetch("http://localhost:8080/api/user/follow", {
+    return fetch("http://64.225.118.247/api/user/follow", {
       method:"put",
       headers: {
         Accept: "application/json",
@@ -84,7 +84,7 @@ export const read = (userId, token) => {
 
 
   export const unfollow = (userId, token, unfollowId) => {
-    return fetch("http://localhost:8080/api/user/unfollow", {
+    return fetch("http://64.225.118.247/api/user/unfollow", {
       method:"put",
       headers: {
         Accept: "application/json",
@@ -100,7 +100,7 @@ export const read = (userId, token) => {
   };
 
   export const findPeople = (userId, token) => {
-    return fetch(`http://localhost:8080/api/user/findpeople/${userId}`, {
+    return fetch(`http://64.225.118.247/api/user/findpeople/${userId}`, {
       method:"GET",
       headers: {
         Accept: "application/json",

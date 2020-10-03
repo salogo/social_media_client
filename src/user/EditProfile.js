@@ -155,7 +155,7 @@ class EditProfile extends Component {
             return <Redirect to={`/api/user/${id}`} />
         }
 
-        const photoUrl = id ? `http://localhost:8080/api/user/photo/${id}?${new Date().getTime()}` : DefaultProfile;
+        const photoUrl = id ? `http://64.225.118.247/api/user/photo/${id}?${new Date().getTime()}` : DefaultProfile;
 
         return (
             <div className="container">

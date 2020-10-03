@@ -146,7 +146,7 @@ import DefaultPost from "../images/clouds.jpeg";
         <img 
         style={{height: "200px", width: "auto"}}
        
-         src= { `http://localhost:8080/api/post/photo/${id}?${new Date().getTime()}`}
+         src= { `http://64.225.118.247/api/post/photo/${id}?${new Date().getTime()}`}
          onError={ i => (i.target.src = `${DefaultPost}`)}
          className="img-thumbnail"
          alt={title}

@@ -55,7 +55,7 @@ class FindPeople extends Component {
 
         <img 
         style={{height: "200px", width: "auto"}}
-         src={`http://localhost:8080/api/user/photo/${user._id}`}
+         src={`http://64.225.118.247/api/user/photo/${user._id}`}
          onError={ i => (i.target.src = `${DefaultProfile}`)}
          className="img-thumbnail"
          alt={user.name}

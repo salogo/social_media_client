@@ -49,7 +49,7 @@ class Signin extends Component {
 
     signin = (user) => {
 
-        return fetch("http://localhost:8080/api/signin", {
+        return fetch("http://64.225.118.247/api/signin", {
             method: "POST",
             headers: {
                 Accept: "application/json",

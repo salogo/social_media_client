@@ -85,7 +85,7 @@ class Profile extends Component {
     if (redirectToSignin) return <Redirect to="/signin" />
 
     const photoUrl = user._id
-      ? `http://localhost:8080/api/user/photo/${user._id}?${new Date().getTime()}`
+      ? `http://64.225.118.247/api/user/photo/${user._id}?${new Date().getTime()}`
       : DefaultProfile;
 
     return (

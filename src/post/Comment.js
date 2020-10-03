@@ -119,7 +119,7 @@ class Comment extends Component {
                                             height="30px"
                                             width="30px"
                                             onError={i => (i.target.src = `${DefaultProfile}`)}
-                                            src={`{http://localhost:8080/api/user/photo/${comment.postedBy._id}}`}
+                                            src={`{http://64.225.118.247/api/user/photo/${comment.postedBy._id}}`}
                                             alt={comment.postedBy.name}
                                         />
                                     </Link>

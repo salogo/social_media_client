@@ -97,7 +97,7 @@ import Comment  from "./Comment";
        
             <div className="card-body">
             <img 
-            src={`http://localhost:8080/api/post/photo/${post._id}`}
+            src={`http://64.225.118.247/api/post/photo/${post._id}`}
              alt={post.title} 
              onError={i => i.target.src = `${DefaultPost}`}
              className="img-thunbail mb-3"
