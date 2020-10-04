@@ -9,10 +9,10 @@ http://determined-relation.surge.sh/
 ##
 
 Built With:
-React (https://reactjs.org/)- The web framework used
-Css3
-JavaScript
-Bootstrap
-Node.js
-Express.js
-Mongodb 
+React (https://reactjs.org/)- The web framework used,
+Css3,
+JavaScript,
+Bootstrap,
+Node.js,
+Express.js,
+Mongodb ,
