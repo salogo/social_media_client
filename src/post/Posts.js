@@ -33,14 +33,16 @@ class Posts extends Component {
                         : " Unknown";
 
                     return (
-                        <div className="card col-md-4" key={i}>
+                        //<div className="card col-md-4" key={i}>
+                        <div style={{ height: "50%", width: "50%", }} key={i}>
                             <div className="card-body">
                                 <img
                                     src={`http://64.225.118.247/api/post/photo/${post._id}`}
                                     alt={post.title}
                                     onError={i => i.target.src = `${DefaultPost}`}
                                     className="img-thunbail mb-3"
-                                    style={{ height: "200px", width: "100%" }}
+                                  //  style={{ height: "200px", width: "100%" }}
+                                  style={{ height: "200px", width: "100%" }}
                                 />
                                 <h5 className="card-title">{post.title}</h5>
                                 {/*substring(0, 10) its to just show few letters before click more */}

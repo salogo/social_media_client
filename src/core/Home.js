@@ -16,7 +16,7 @@ const Home = () => (
 
         </div>
         <div className="container">
-            <Posts />
+            <Posts /> 
         </div>
     </div>
 
