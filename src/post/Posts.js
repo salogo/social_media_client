@@ -37,7 +37,7 @@ class Posts extends Component {
                         <div style={{ height: "50%", width: "50%", }} key={i}>
                             <div className="card-body">
                                 <img
-                                    src={`http://64.225.118.247/api/post/photo/${post._id}`}
+                                    src={`https://nodesocialapp.herokuapp.com/api/post/photo/${post._id}`}
                                     alt={post.title}
                                     onError={i => i.target.src = `${DefaultPost}`}
                                     className="img-thunbail mb-3"

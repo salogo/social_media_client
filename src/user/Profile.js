@@ -85,7 +85,7 @@ class Profile extends Component {
     if (redirectToSignin) return <Redirect to="/signin" />
 
     const photoUrl = user._id
-      ? `http://64.225.118.247/api/user/photo/${user._id}?${new Date().getTime()}`
+      ? `https://nodesocialapp.herokuapp.com/api/user/photo/${user._id}?${new Date().getTime()}`
       : DefaultProfile;
 
     return (

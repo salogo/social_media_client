@@ -49,7 +49,7 @@ class Signin extends Component {
 
     signin = (user) => {
 
-        return fetch("http://64.225.118.247/api/signin", {
+        return fetch("https://nodesocialapp.herokuapp.com/api/signin", {
             method: "POST",
             headers: {
                 Accept: "application/json",

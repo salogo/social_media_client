@@ -25,7 +25,7 @@ class ProfileTabs extends Component {
                                                 height="30px"
                                                 width="30px"
                                                 onError={i => (i.target.src = `${DefaultProfile}`)}
-                                                src={`{http://64.225.118.247/api/user/photo/${person._id}}`}
+                                                src={`{https://nodesocialapp.herokuapp.com/api/user/photo/${person._id}}`}
                                                 alt={person.name}
                                             />
                                             <div>
@@ -54,7 +54,7 @@ class ProfileTabs extends Component {
                                                 height="30px"
                                                 width="30px"
                                                 onError={i => (i.target.src = `${DefaultProfile}`)}
-                                                src={`{http://64.225.118.247/api/user/photo/${person._id}}`}
+                                                src={`{https://nodesocialapp.herokuapp.com/api/user/photo/${person._id}}`}
                                                 alt={person.name}
                                             />
                                             <div>

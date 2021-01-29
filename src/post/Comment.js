@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { comment, uncomment } from "./apiPost";
 import { isAuthenticated } from "../auth";
 import { Link } from "react-router-dom";
@@ -119,7 +119,7 @@ class Comment extends Component {
                                             height="30px"
                                             width="30px"
                                             onError={i => (i.target.src = `${DefaultProfile}`)}
-                                            src={`{http://64.225.118.247/api/user/photo/${comment.postedBy._id}}`}
+                                            src={`{https://nodesocialapp.herokuapp.com/api/user/photo/${comment.postedBy._id}}`}
                                             alt={comment.postedBy.name}
                                         />
                                     </Link>
@@ -137,7 +137,7 @@ class Comment extends Component {
                                                 {isAuthenticated().user &&
                                                     isAuthenticated().user._id ===
                                                     comment.postedBy._id &&
-                                                    <>
+                                                    <Fragment>
                                                         <button
                                                             onClick={() => this.deleteConfirmed(comment)
                                                             }
@@ -145,7 +145,7 @@ class Comment extends Component {
                                                         >
                                                             Remove Post
                                               </button>
-                                                    </>
+                                                    </Fragment>
                                                 }
                                             </span>
                                         </p>

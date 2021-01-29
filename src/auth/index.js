@@ -3,7 +3,7 @@
 export const  signup = (user) => {
   
 
-    return fetch(`http://64.225.118.247/api/signup`, {
+    return fetch(`https://nodesocialapp.herokuapp.com/api/signup`, {
         method: "POST",
         headers: {
             Accept: "application/json",
@@ -29,7 +29,7 @@ export const   authenticate =(jwt, next)=> {
 export const signout = next => {
     if (typeof window !== "undefined") localStorage.removeItem("jwt");
     next();
-    return fetch(`http://64.225.118.247/api/signout`, {
+    return fetch(`https://nodesocialapp.herokuapp.com/api/signout`, {
         methode: "GET"
     })
         .then(response => {
