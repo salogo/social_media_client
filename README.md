@@ -1,3 +1,8 @@
+Full-Stack: Social media App
+A user can sign up , sign in, sign out . A user can create, edit, delete a post. A user can like or unlike other people posts and comment. A user can delete his/her profile . A user can also follow others or unfollow
+
+#
+
 Project live :
 
 http://determined-relation.surge.sh/
