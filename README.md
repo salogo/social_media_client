@@ -4,12 +4,13 @@ http://determined-relation.surge.sh/
 ##
 
 Youtub Video:
-#
 https://youtu.be/HHYsmh-NdKI
 Screen Shot of the App .
 Home page:
 ![image](https://user-images.githubusercontent.com/54459398/95004260-85aba880-05ae-11eb-96c3-e724747375e1.png)
+
 # 
+
 Built With:
 React (https://reactjs.org/)- The web framework used,
 Css3,
@@ -25,9 +26,11 @@ A user profile:
 ![image](https://user-images.githubusercontent.com/54459398/108567057-19b3ad80-72cd-11eb-9c8b-c229513d11bb.png)
 
 #
+
 A user can update profile: 
 ![image](https://user-images.githubusercontent.com/54459398/108567271-8f1f7e00-72cd-11eb-818c-cf6359cf7208.png)
 #
+
 A user can follow other users:
 
 ![image](https://user-images.githubusercontent.com/54459398/108567329-ad857980-72cd-11eb-8534-4ca8444b60f0.png)
