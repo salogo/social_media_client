@@ -1,7 +1,25 @@
+Project live :
+
+http://determined-relation.surge.sh/
+##
+
+Youtub Video:
+
+https://youtu.be/HHYsmh-NdKI#
 Screen Shot of the App .
 Home page:
 ![image](https://user-images.githubusercontent.com/54459398/95004260-85aba880-05ae-11eb-96c3-e724747375e1.png)
 # 
+Built With:
+React (https://reactjs.org/)- The web framework used,
+Css3,
+JavaScript,
+Bootstrap,
+Node.js,
+Express.js,
+Mongodb 
+
+###
 
 A user profile:
 ![image](https://user-images.githubusercontent.com/54459398/108567057-19b3ad80-72cd-11eb-9c8b-c229513d11bb.png)
@@ -25,24 +43,3 @@ A user can like or unlike comments:
 #
 A user can view other users posts and comment
 ![image](https://user-images.githubusercontent.com/54459398/108567685-503df800-72ce-11eb-83f1-feae1837a422.png)
-
-#
-Project live :
-
-http://determined-relation.surge.sh/
-##
-
-Built With:
-React (https://reactjs.org/)- The web framework used,
-Css3,
-JavaScript,
-Bootstrap,
-Node.js,
-Express.js,
-Mongodb 
-
-##
-
-Youtub Video:
-
-https://youtu.be/HHYsmh-NdKI
