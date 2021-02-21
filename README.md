@@ -55,9 +55,10 @@ A user can view other users posts and comment
 ![image](https://user-images.githubusercontent.com/54459398/108567685-503df800-72ce-11eb-83f1-feae1837a422.png)
 
 #
-#Code Examples
+Code Examples
+#
 Here is where I imported list() function, then DidMounted to get all the posts and filled out the state to display them :  
-
+#
 import React, { Component } from 'react';
 import { list } from "./apiPost";
 import DefaultPost from "../images/clouds.jpeg";
