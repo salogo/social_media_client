@@ -81,7 +81,6 @@ class Posts extends Component {
             }
         })
     }
-
     renderPosts = posts => {
         return (
             <div className="row">
