@@ -30,7 +30,7 @@ Mongodb
 ###
 
 A user profile:
-![image](https://user-images.githubusercontent.com/54459398/108567057-19b3ad80-72cd-11eb-9c8b-c229513d11bb.png)
+![image](https://user-images.githubusercontent.com/54459398/116670401-4cc98b80-a965-11eb-9348-b515d7849313.png)
 
 #
 
