@@ -75,7 +75,7 @@ class Posts extends Component {
             <div className="container">
                 <h2 className="mt-5 mb-5">
                 {/*  posts.length because its in array */}
-                    {!posts.length ? "Loading..." : "STAY CONNECTED TO OUR ACTIVE USERS"}
+                    {!posts.length ? "Loading..." : "Bienvenue sur le site des Burkinabe de Chicago (Association Des Burkinabe De Chicago)"}
                 </h2>
                 {this.renderPosts(posts)}
             </div>

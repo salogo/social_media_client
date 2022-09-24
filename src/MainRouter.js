@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import Home from "./core/Home";
 import Signup from "./user/Signup";
 import Signin from "./user/Signin";
+import ContactUs from "./user/ContacUs";
 import Menu from "./core/Menu";
 import Profile from "./user/Profile";
 import Users from "./user/Users";
@@ -26,6 +27,7 @@ const MainRouter = () => (
             <Route exact path="/api/users/" component={Users} />
             <Route exact path="/signup" component={Signup} /> 
             <Route exact path="/signin" component={Signin} /> 
+            <Route exact path="/contactUs" component={ContactUs} /> 
             <PrivateRoute exact path="/api/user/edit/:userId" component={EditProfile} />
             <PrivateRoute exact path="/FindPeople" component={FindPeople} />
             <PrivateRoute exact path="/api/user/:userId" component={Profile} />  

@@ -11,7 +11,8 @@ const isActive = (history, path) => {
 const Menu = ({ history }) => (
     <Fragment>
 
-        <ul className="nav nav-tabs bg-dark">
+        <ul className="nav nav-tabs bg-info">
+        
             <li className="nav-item">
                 <Link
                     className="nav-link"
@@ -26,7 +27,7 @@ const Menu = ({ history }) => (
                  </Link>
             </li>
 
-            <li className="nav-item">
+          {/*  <li className="nav-item">
                 <Link
                     className="nav-link"
                     style={isActive(history, "/users")}
@@ -40,7 +41,7 @@ const Menu = ({ history }) => (
                         <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" />
                     </svg>
                 </Link>
-            </li>
+</li> */ }
 
             <li className="nav-item">
 
@@ -48,15 +49,27 @@ const Menu = ({ history }) => (
                     to={"/post/create"}
                     className="nav-link">
 
-                    what's in your mind!
+                    Create a new post
+           </Link>
+
+            </li>
+
+            <li className="nav-item">
+
+                <Link
+                    to={"/ContactUs"}
+                    className="nav-link">
+
+                    Contact us
            </Link>
 
             </li>
 
 
+
             {!isAuthenticated() && (
                 <Fragment>
-                    <li className="nav-item">
+                  {/*  <li className="nav-item">
                         <Link
                             className="nav-link"
                             style={isActive(history, "/signup")}
@@ -64,7 +77,7 @@ const Menu = ({ history }) => (
                         >
                             Sign Up
  </Link>
-                    </li>
+            </li> */ }
                     <li className="nav-item">
                         <Link
                             className="nav-link"
@@ -83,7 +96,7 @@ const Menu = ({ history }) => (
 
                     <li className="nav-item">
 
-                        <Link
+                       {/* <Link
                             to={"/findpeople"}
                             className="nav-link">
                             Follow
@@ -93,7 +106,7 @@ const Menu = ({ history }) => (
                                 <path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z" />
                                 <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" />
                             </svg>
-                        </Link>
+            </Link>  */}
 
                     </li>
 
@@ -102,7 +115,7 @@ const Menu = ({ history }) => (
                         <Link
                             to={`/api/user/${isAuthenticated().user._id}`}
                             className="nav-link">
-                            {`${isAuthenticated().user.name}' profile`}
+                            
                         </Link>
                     </li>
                     <li className="nav-item">
